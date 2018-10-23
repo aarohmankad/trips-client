@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import SignUpForm from './pages/SignUpForm';
 import SignInForm from './pages/SignInForm';
@@ -10,23 +10,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-
-          <div className="App_LeftMargin"></div>
+          <div className="App_LeftMargin" />
 
           <div className="App_Form">
-
             {/* Routing Path to Different Pages */}
-            <Route exact path="/" component={LandingPage}>
-            </Route>
-            <Route path="/sign-in" component={SignInForm}>
-            </Route>  
-            <Route path="/sign-up" component={SignUpForm}>
-            </Route>
-
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/sign-in" component={SignInForm} />
+            <Route path="/sign-up" component={SignUpForm} />
           </div>
 
-          <div className="App_RightMargin"></div>
-
+          <div className="App_RightMargin" />
         </div>
       </Router>
     );
