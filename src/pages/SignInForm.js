@@ -83,7 +83,7 @@ class SignInForm extends Component {
                             <input
                                 type="email"
                                 id="email"
-                                className="FormField_Input"
+                                className="FormField_Input FormField_SignIn"
                                 placeholder="Enter your email"
                                 name="email"
                                 value={this.state.email}
@@ -103,7 +103,7 @@ class SignInForm extends Component {
                             <input
                                 type="password"
                                 id="password"
-                                className="FormField_Input"
+                                className="FormField_Input FormField_SignIn"
                                 placeholder="Enter your password"
                                 name="password"
                                 value={this.state.password}

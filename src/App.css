@@ -90,6 +90,7 @@
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
 }
+
 .PageSwitcher_Item:last-child {
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
@@ -102,7 +103,7 @@
 .FormTitle {
 	color: #707C8B;
 	font-weight: 300;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .FormTitle_Link {
@@ -133,8 +134,24 @@
 	font-size: .9em;
 	color: white;
 }
+
+.FormField_LeftLabel {
+	display: inline;
+	text-transform: uppercase;
+	font-size: .9em;
+	color: white;
+	text-align: left;
+}
+
+.FormField_RightLabel {
+	display: inline;
+	text-transform: uppercase;
+	font-size: .9em;
+	color: white;
+}
+
 .FormField_Input {
-	width: 85%;
+	width: 40%;
 	background-color: transparent;
 	border: none;
 	color: white;
@@ -144,10 +161,34 @@
 	font-weight: 300;
 	padding-bottom: 10px;
 	margin-top: 10px;
+	position: relative;
+}
+
+.FormField_RightInput {
+	left: 5%;
+}
+
+.FormField_SignIn {
+	width: 80%;
 }
 
 .FormField_Input::placeholder {
 	color: #616E7F;
+}
+
+.FormField_LastName {
+	position: relative;
+	left: 35.3%;
+}
+
+.FormField_Email {
+	position: relative;
+	left: 36.1%;
+}
+
+.FormField_ConfirmPW {
+	position: relative;
+	left: 36.12%;
 }
 
 .FormField_Button {
