@@ -128,6 +128,10 @@
 	border-bottom: 1px solid #199087;
 }
 
+#wrap {
+	width: 100%;
+}
+
 .FormField {
 	margin-bottom: 40px;
 }
@@ -140,15 +144,16 @@
 }
 
 .FormField_LeftLabel {
-	display: inline;
+	width: 40%;
 	text-transform: uppercase;
 	font-size: .9em;
 	color: white;
-	text-align: left;
+	float: left;
 }
 
 .FormField_RightLabel {
-	display: inline;
+	width: 55%;
+	float: right;
 	text-transform: uppercase;
 	font-size: .9em;
 	color: white;
@@ -178,21 +183,6 @@
 
 .FormField_Input::placeholder {
 	color: #616E7F;
-}
-
-.FormField_LastName {
-	position: relative;
-	left: 35.3%;
-}
-
-.FormField_Email {
-	position: relative;
-	left: 36.1%;
-}
-
-.FormField_ConfirmPW {
-	position: relative;
-	left: 36.12%;
 }
 
 .FormField_Button {
