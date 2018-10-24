@@ -6,6 +6,7 @@ class SignUpForm extends Component {
     super();
 
     this.state = {
+      name: '',
       firstname: '',
       lastname: '',
       username: '',
@@ -19,11 +20,6 @@ class SignUpForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-// onChange(e) {
-//   this.handleChange(e);
-//   this.checkPW(e);
-// }
-
 handleChange(e) {
   let target = e.target;
   let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -33,12 +29,6 @@ handleChange(e) {
     [name]: value
   });
 }
-
-// checkPW() {
-//   if (this.password !== this.confirmPW) {
-//     return <span className="error">Passwords are not equal.</span>
-//   }
-// }
 
 handleSubmit(e) {
   e.preventDefault();
@@ -99,6 +89,8 @@ render() {
                   <input type="password" name="password" id="password" className="FormField_Input" placeholder="Enter your password" value={this.state.password} onChange={this.handleChange}pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required title="Must contain at least one uppercase and lowercase letter, one number, and contain 6 or more characters" />
                   {/* Password Confirmation */}
                   <input type="password" name="confirmPW" id="confirmPW" className="FormField_Input FormField_RightInput" placeholder="Enter your password" value={this.state.confirmPW} onChange={this.handleChange} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required title="Must contain at least one uppercase and lowercase letter, one number, and contain 6 or more characters"/>
+                  {this.state.password !== this.state.confirmPW && <div>
+                  <span className="redError"><p>Passwords do not match</p> </span> </div>}
                 </div>
             </div>
 
@@ -111,7 +103,7 @@ render() {
 
             {/* Submission Button */}
             <div className="FormField">
-              <button className="FormField_Button mr-20">Sign Up</button> <Link to="/sign-in" className="FormField_Link">I'm already a member</Link>
+              <button className="FormField_Button mr-20" disabled={this.state.password !== this.state.confirmPW}>Sign Up</button> <Link to="/sign-in" className="FormField_Link">I'm already a member</Link>
             </div>
           </form>
         </div>
