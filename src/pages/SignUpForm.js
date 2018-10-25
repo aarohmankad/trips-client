@@ -42,14 +42,14 @@ class SignUpForm extends Component {
         <div className="Sign-Up">
           {/* Sign In & Sign Up Buttons */}
           <div className="PageSwitcher">
-              <NavLink to="/sign-in" activeClassName="PageSwitcher_Item-Active" className="PageSwitcher_Item">Sign In</NavLink>
-              <NavLink exact to="/sign-up" activeClassName="PageSwitcher_Item-Active" className="PageSwitcher_Item">Sign Up</NavLink>
+            <NavLink to="/sign-in" activeClassName="PageSwitcher_Item-Active" className="PageSwitcher_Item">Sign In</NavLink>
+            <NavLink exact to="/sign-up" activeClassName="PageSwitcher_Item-Active" className="PageSwitcher_Item">Sign Up</NavLink>
           </div>
 
           {/* Sign In & Sign Up Links */}
           <div className="FormTitle">
-              <NavLink to="/sign-in" activeClassName="FormTitle_Link-Active" className="FormTitle_Link">Sign In</NavLink> or 
-              <NavLink exact to="/sign-up" activeClassName="FormTitle_Link-Active" className="FormTitle_Link">Sign Up</NavLink>
+            <NavLink to="/sign-in" activeClassName="FormTitle_Link-Active" className="FormTitle_Link">Sign In</NavLink> or 
+            <NavLink exact to="/sign-up" activeClassName="FormTitle_Link-Active" className="FormTitle_Link">Sign Up</NavLink>
           </div>
 
           <div id="wrap">
@@ -92,8 +92,7 @@ class SignUpForm extends Component {
                     <input type="password" name="password" id="password" className="FormField_Input" placeholder="Enter your password" value={this.state.password} onChange={this.handleChange}pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required title="Must contain at least one uppercase and lowercase letter, one number, and contain 6 or more characters" />
                     {/* Password Confirmation */}
                     <input type="password" name="confirmPW" id="confirmPW" className="FormField_Input FormField_RightInput" placeholder="Enter your password" value={this.state.confirmPW} onChange={this.handleChange} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required title="Must contain at least one uppercase and lowercase letter, one number, and contain 6 or more characters"/>
-                    {this.state.password !== this.state.confirmPW && <div>
-                    <span className="redError"><p>Passwords do not match</p> </span> </div>}
+                    {(this.state.confirmPW && this.state.password !== this.state.confirmPW) && <div> <span className="redError"><p>Passwords do not match</p> </span> </div>}
                   </div>
                 </div>
 
@@ -108,6 +107,7 @@ class SignUpForm extends Component {
                 <div className="FormField">
                   <button className="FormField_Button mr-20" disabled={this.state.password !== this.state.confirmPW}>Sign Up</button> <Link to="/sign-in" className="FormField_Link">I'm already a member</Link>
                 </div>
+
               </form>
             </div>
           </div>
