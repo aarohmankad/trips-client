@@ -6,7 +6,7 @@ class LandingPage extends Component {
     return (
       <div className="LandingPage">
         <div className="LandingPage_Center">
-          <h1>
+          <h1 className="LandingPage_Slide">
             Welcome to&nbsp;
             <span className="blueText">G</span>
             <span className="redText">o</span>
@@ -16,19 +16,16 @@ class LandingPage extends Component {
             <span className="redText">e</span>
             &nbsp;Trips
           </h1>
-					<div id="wrap">
-						{/* Sign In & Sign Up Buttons */}
-						{/* <div className="GetStarted"> */}
-							<NavLink to="/sign-in" className="GetStarted_Link">
-								Sign In
-							</NavLink>
-							&nbsp;&nbsp;&nbsp;&nbsp;
-						{/* </div> */}
-						{/* <div className="GetStarted"> */}
-							<NavLink to="/sign-up" className="GetStarted_Link">
-								Sign Up
-							</NavLink>
-						{/* </div> */}
+					<div id="wrap" className="GetStarted">
+            <div className="GetStarted_Fade">
+              <NavLink to="/sign-in" className="GetStarted_Link">
+                Sign In
+              </NavLink>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <NavLink to="/sign-up" className="GetStarted_Link">
+                Sign Up
+              </NavLink>
+            </div>
 					</div>
 				</div>
       </div>
