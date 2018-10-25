@@ -65,7 +65,6 @@ class SignInForm extends Component {
 						</NavLink>{' '}
 						or
 						<NavLink
-							exact
 							to="/sign-up"
 							activeClassName="FormTitle_Link-Active"
 							className="FormTitle_Link"

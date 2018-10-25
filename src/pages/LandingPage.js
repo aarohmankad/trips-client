@@ -16,11 +16,19 @@ class LandingPage extends Component {
             <span className="redText">e</span>
             &nbsp;Trips
           </h1>
-					{/* Sign In & Sign Up Buttons */}
-					<div className="GetStarted">
-						<NavLink to="/sign-in" className="GetStarted_Link">
-							Click Here to Get Started
-						</NavLink>
+					<div id="wrap">
+						{/* Sign In & Sign Up Buttons */}
+						{/* <div className="GetStarted"> */}
+							<NavLink to="/sign-in" className="GetStarted_Link">
+								Sign In
+							</NavLink>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+						{/* </div> */}
+						{/* <div className="GetStarted"> */}
+							<NavLink to="/sign-up" className="GetStarted_Link">
+								Sign Up
+							</NavLink>
+						{/* </div> */}
 					</div>
 				</div>
       </div>
