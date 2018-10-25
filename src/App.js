@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import SignUpForm from './pages/SignUpForm';
 import SignInForm from './pages/SignInForm';
+import Logo from './images/trips-icon.png';
+
 import './App.css';
 
 class App extends Component {
@@ -10,16 +12,12 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="App_LeftMargin" />
-
-          <div className="App_Form">
-            {/* Routing Path to Different Pages */}
-            <Route exact path="/" component={LandingPage} />
-            <Route path="/sign-in" component={SignInForm} />
-            <Route path="/sign-up" component={SignUpForm} />
+          <div className="Logo">
+            <img src={Logo} width="100" alt=""/>
           </div>
-
-          <div className="App_RightMargin" />
+          <Route exact path="/" component={LandingPage}/>
+          <Route path="/sign-in" component={SignInForm} />
+          <Route path="/sign-up" component={SignUpForm} />
         </div>
       </Router>
     );
