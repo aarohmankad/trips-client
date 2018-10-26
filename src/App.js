@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import SignUpForm from './pages/SignUpForm';
 import SignInForm from './pages/SignInForm';
+import HomePage from './pages/HomePage';
 import Logo from './images/trips-icon.png';
 
 import './App.css';
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/" component={LandingPage}/>
           <Route path="/sign-in" component={SignInForm} />
           <Route path="/sign-up" component={SignUpForm} />
+          <Route path="/home" component={HomePage} />
         </div>
       </Router>
     );

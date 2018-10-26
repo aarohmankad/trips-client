@@ -51,6 +51,23 @@ body {
 	animation: slidein-delay 2s;
 }
 
+.HomePage {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 160%;
+	overflow: hidden;
+	animation: fadein 2s;
+}
+
+.HomePage_Center {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	height: 760px;
+	width: 20%;
+}
+
 .blueText {
 	color: #4885ed;
 }
@@ -152,6 +169,11 @@ body {
 
 .FormField {
 	margin-bottom: 40px;
+}
+
+.FormField_40 {
+	width: 50%;
+	margin-left: 25%;
 }
 
 .FormField_Label {
