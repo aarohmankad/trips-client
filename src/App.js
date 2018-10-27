@@ -12,15 +12,17 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <div className="Logo">
-            <img src={Logo} width="100" alt=""/>
+        <div>
+          <div className="App">
+            <div className="Logo">
+              <img src={Logo} width="100" alt=""/>
+            </div>
+            <Route exact path="/" component={LandingPage}/>
+            <Route path="/sign-in" component={SignInForm} />
+            <Route path="/sign-up" component={SignUpForm} />
+            <Route path="/home" component={HomePage} />
+            <Route path="/explore" component={ExplorePage} />
           </div>
-          <Route exact path="/" component={LandingPage}/>
-          <Route path="/sign-in" component={SignInForm} />
-          <Route path="/sign-up" component={SignUpForm} />
-          <Route path="/home" component={HomePage} />
-          <Route path="/explore" component={ExplorePage} />
         </div>
       </Router>
     );

@@ -1,20 +1,17 @@
-.ExplorePage {
-    overflow: hidden;
-}
-
-.Explore {
+.Explore { 
     margin-left: 45.7%;
-    font-size: 125%;
+    font-size: 100%;
 }
 
 .grid {
+    font-size: 125%;
     display: grid;
-	margin-left: 25%;
-	margin-bottom: 4%;
-    width: 50%;
+    margin-top: 4.5%;
+	margin-left: 27.5%;
+    width: 45%;
     padding: 25px 40px;
 	overflow: hidden;
-	animation: fadein 0.5s;
+	animation: fadein 1s;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
     grid-auto-rows: minmax(175px, auto);

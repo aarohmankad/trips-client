@@ -1,17 +1,15 @@
 .Form {
 	margin-top: 4%;
 	margin-left: 25%;
-	margin-bottom: 4%;
 	width: 50%;
 	background-color: #2E4158;
 	padding: 25px 40px;
 	border-radius: 25px;
-	overflow: hidden;
-	animation: fadein 0.5s;
+	animation: fadein 1s;
 }
 
 .FormCenter {
-	margin-bottom: 100px;
+	margin-bottom: -30px;
 }
 
 .FormTitle {
