@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import '../styles/SignInSignUp.css';
+// import '../styles/Forms.css';
 
 class SignInForm extends Component {
 	constructor() {
@@ -33,7 +35,7 @@ class SignInForm extends Component {
 
 	render() {
 		return (
-			<div className="App_Form">
+			<div className="Form">
 				<div className="Sign-In">
 					{/* Sign In & Sign Up Buttons */}
 					<div className="PageSwitcher">

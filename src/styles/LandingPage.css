@@ -1,0 +1,53 @@
+.LandingPage {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 200%;
+	overflow: hidden;
+}
+
+.LandingPage_Center {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	height: 740px;
+	width: 20%;
+}
+
+.LandingPage_Slide { 
+	animation: slidein-delay 2s;
+}
+
+.GetStarted_Link {
+	background-color: #4285f4;
+	color: white;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: .9em;
+	border: none;
+	outline: none;
+	display: inline;
+	text-decoration: none;
+	border-radius: 25px;
+	animation: fadein-delay 3.5s;
+}
+
+.blueText {
+	color: #4885ed;
+}
+
+.redText {
+	color: #db3236;
+}
+
+.redError {
+	color: red;
+}
+
+.greenText {
+	color: #3cba54;
+}
+
+.yellowText {
+	color: #f4c20d;
+}

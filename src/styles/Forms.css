@@ -1,0 +1,136 @@
+.Form {
+	margin-top: 4%;
+	margin-left: 25%;
+	margin-bottom: 4%;
+	width: 50%;
+	background-color: #2E4158;
+	padding: 25px 40px;
+	border-radius: 25px;
+	overflow: hidden;
+	animation: fadein 0.5s;
+}
+
+.FormCenter {
+	margin-bottom: 100px;
+}
+
+.FormTitle {
+	color: #707C8B;
+	font-weight: 300;
+	margin-bottom: 40px;
+}
+
+.FormTitle_Link {
+	color: #707C8B;
+	text-decoration: none;
+	font-size: 1.7em;
+	margin: 0 10px;
+	padding-bottom: 5px;
+}
+
+.FormTitle_Link:first-child {
+	margin-left: 0;
+}
+
+.FormTitle_Link-Active {
+	color: white;
+	border-bottom: 1px solid #2258b5;
+}
+
+#wrap {
+	width: 100%;
+}
+
+.FormField {
+	margin-bottom: 40px;
+}
+
+.FormField_40 {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.FormField_Label {
+	text-transform: uppercase;
+	font-size: .9em;
+	color: white;
+}
+
+.FormField_LeftLabel {
+	width: 40%;
+	text-transform: uppercase;
+	font-size: .9em;
+	color: white;
+	float: left;
+}
+
+.FormField_RightLabel {
+	width: 47.3%;
+	float: right;
+	text-transform: uppercase;
+	font-size: .9em;
+	color: white;
+}
+
+.FormField_Input {
+	width: 47.5%;
+	background-color: transparent;
+	border: none;
+	color: white;
+	outline: none;
+	border-bottom: 1px solid #445366;
+	font-size: 1em;
+	font-weight: 300;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.FormField_RightInput {
+	left: 5%;
+}
+
+.FormField_SignIn {
+	width: 100%;
+}
+
+.FormField_Input::placeholder {
+	color: #616E7F;
+}
+
+.FormField_Button {
+	background-color: #4285f4;
+	color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 25px;
+	padding: 15px 70px;
+	font-size: .8em;
+	font-weight: 500;
+}
+
+.FormField_Link {
+	color: #66707D;
+	text-decoration: none;
+	border-bottom: 1.5px solid #2258b5;
+	padding-bottom: 5px;
+}
+
+.FormField_CheckboxLabel {
+	color: #646F7D;
+	font-size: .9em;
+}
+
+.FormField_Checkbox {
+	position: relative;
+	top: 1.5px;
+}
+
+.FormField_TermsLink {
+	color: white;
+	border-bottom: 1px solid #2258b5;
+	text-decoration: none;
+	padding-bottom: 2px;
+	margin-left: 5px;
+}

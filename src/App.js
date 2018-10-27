@@ -4,9 +4,9 @@ import LandingPage from './pages/LandingPage';
 import SignUpForm from './pages/SignUpForm';
 import SignInForm from './pages/SignInForm';
 import HomePage from './pages/HomePage';
+import ExplorePage from './pages/ExplorePage';
 import Logo from './images/trips-icon.png';
-
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
   render() {
@@ -20,6 +20,7 @@ class App extends Component {
           <Route path="/sign-in" component={SignInForm} />
           <Route path="/sign-up" component={SignUpForm} />
           <Route path="/home" component={HomePage} />
+          <Route path="/explore" component={ExplorePage} />
         </div>
       </Router>
     );

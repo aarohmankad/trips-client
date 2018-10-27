@@ -1,0 +1,32 @@
+.PageSwitcher {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 5%;
+}
+
+.PageSwitcher_Item {
+	background-color: #4C5D72;
+	color: #9DA6B1;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: .9em;
+	border: none;
+	outline: none;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.PageSwitcher_Item-Active {
+	background-color: #4285f4;
+	color: white;
+}
+
+.PageSwitcher_Item:first-child {
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+}
+
+.PageSwitcher_Item:last-child {
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+}

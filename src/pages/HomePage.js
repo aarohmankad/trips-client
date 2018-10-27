@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../styles/HomePage.css';
+import '../styles/Forms.css';
 
 class HomePage extends Component {
 

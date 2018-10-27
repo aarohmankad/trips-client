@@ -1,0 +1,16 @@
+.HomePage {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 160%;
+	overflow: hidden;
+	animation: fadein 2s;
+}
+
+.HomePage_Center {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	height: 760px;
+	width: 20%;
+}

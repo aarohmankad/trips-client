@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import '../styles/LandingPage.css';
 
 class LandingPage extends Component {
   render() {
@@ -16,16 +17,14 @@ class LandingPage extends Component {
             <span className="redText">e</span>
             &nbsp;Trips
           </h1>
-					<div id="wrap" className="GetStarted">
-            <div className="GetStarted_Fade">
-              <NavLink to="/sign-in" className="GetStarted_Link">
-                Sign In
-              </NavLink>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <NavLink to="/sign-up" className="GetStarted_Link">
-                Sign Up
-              </NavLink>
-            </div>
+					<div className="GetStarted_Fade">
+            <NavLink to="/sign-in" className="GetStarted_Link">
+              Sign In
+            </NavLink>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <NavLink to="/sign-up" className="GetStarted_Link">
+              Sign Up
+            </NavLink>
 					</div>
 				</div>
       </div>
