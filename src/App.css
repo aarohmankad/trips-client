@@ -14,7 +14,7 @@
 .landing-page,
 .sign-in-page,
 .register-page {
-	background-image: url('/cityscape.jpg');
+	background-image: url('/static/images/cityscape.jpg');
 	background-size: cover;
 }
 
