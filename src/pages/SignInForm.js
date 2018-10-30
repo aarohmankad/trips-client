@@ -1,5 +1,7 @@
+import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
 import React, { Component } from 'react';
-import { NavLink, Link } from 'react-router-dom';
 
 class SignInForm extends Component {
 	constructor() {
@@ -15,9 +17,8 @@ class SignInForm extends Component {
 	}
 
 	handleChange(e) {
-		let target = e.target;
+		const { name, target } = e;
 		let value = target.type === 'checkbox' ? target.checked : target.value;
-		let name = target.name;
 
 		this.setState({
 			[name]: value,
@@ -33,99 +34,40 @@ class SignInForm extends Component {
 
 	render() {
 		return (
-			<div className="App_Form">
-				<div className="Sign-In">
-					{/* Sign In & Sign Up Buttons */}
-					<div className="PageSwitcher">
-						<NavLink
-							to="/sign-in"
-							activeClassName="PageSwitcher_Item-Active"
-							className="PageSwitcher_Item"
-						>
-							Sign In
-						</NavLink>
-						<NavLink
-							exact
-							to="/sign-up"
-							activeClassName="PageSwitcher_Item-Active"
-							className="PageSwitcher_Item"
-						>
-							Sign Up
-						</NavLink>
-					</div>
+			<div className="sign-in-page">
+				<Paper className="sign-in-paper">
+					<h1>Sign In</h1>
 
-					{/* Sign In & Sign Up Links */}
-					<div className="FormTitle">
-						<NavLink
-							to="/sign-in"
-							activeClassName="FormTitle_Link-Active"
-							className="FormTitle_Link"
-						>
-							Sign In
-						</NavLink>{' '}
-						or
-						<NavLink
-							to="/sign-up"
-							activeClassName="FormTitle_Link-Active"
-							className="FormTitle_Link"
-						>
-							Sign Up
-						</NavLink>
-					</div>
+					<form>
+						<TextField
+							id="outlined-name"
+							className="sign-in-formfield"
+							label="Email"
+							value={this.state.email}
+							onChange={this.handleChange}
+							margin="normal"
+							variant="outlined"
+							type="email"
+							name="email"
+							autocomplete="email"
+						/>
 
-					<div className="FormCenter">
-						<form className="FormFields" onSubmit={this.handleSubmit}>
-							{/* Email Address */}
-							<div className="FormField">
-								<label className="FormField_Label" htmlFor="email">
-									Email Address
-								</label>
-								<input
-									type="email"
-									id="email"
-									className="FormField_Input FormField_SignIn"
-									placeholder="Enter your email"
-									name="email"
-									value={this.state.email}
-									onChange={this.handleChange}
-									required
-								/>
-							</div>
+						<TextField
+							id="outlined-name"
+							className="sign-in-formfield"
+							label="Password"
+							value={this.state.password}
+							onChange={this.handleChange}
+							margin="normal"
+							variant="outlined"
+							type="password"
+						/>
+					</form>
 
-							{/* Password Field */}
-							<div className="FormField">
-								<label
-									className="FormField_Label"
-									htmlFor="password"
-								>
-									Password
-								</label>
-								<input
-									type="password"
-									id="password"
-									className="FormField_Input FormField_SignIn"
-									placeholder="Enter your password"
-									name="password"
-									value={this.state.password}
-									onChange={this.handleChange}
-									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-									required
-									title="Must contain at least one uppercase and lowercase letter, one number, and contain 6 or more characters"
-								/>
-							</div>
-
-							{/* Submission Button */}
-							<div className="FormField">
-								<button className="FormField_Button mr-20">
-									Sign In
-								</button>{' '}
-								<Link to="/sign-up" className="FormField_Link">
-									Create an account
-								</Link>
-							</div>
-						</form>
-					</div>
-				</div>
+					<Button variant="contained" color="#00E676" size="large">
+						Sign In
+					</Button>
+				</Paper>
 			</div>
 		);
 	}

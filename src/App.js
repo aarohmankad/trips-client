@@ -13,11 +13,11 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="Logo">
-            <img src={Logo} width="100" alt=""/>
+            <img src={Logo} width="100" alt="" />
           </div>
-          <Route exact path="/" component={LandingPage}/>
-          <Route path="/sign-in" component={SignInForm} />
-          <Route path="/sign-up" component={SignUpForm} />
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/signin" component={SignInForm} />
+          <Route path="/signup" component={SignUpForm} />
         </div>
       </Router>
     );
