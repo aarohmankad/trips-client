@@ -19,10 +19,7 @@ class SignInForm extends Component {
 
 	handleChange(e) {
 		const { target } = e;
-		const { name } = target;
-		let value = target.type === 'checkbox' ? target.checked : target.value;
-
-		console.log(name, target);
+		const { name, value } = target;
 
 		this.setState({
 			[name]: value,

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 import LandingPage from './pages/LandingPage';
-import SignUpForm from './pages/SignUpForm';
-import SignInForm from './pages/SignInForm';
+import Register from './pages/Register';
+import SignIn from './pages/SignIn';
 import Logo from './images/trips-icon.png';
 
 import './App.css';
@@ -19,8 +19,8 @@ class App extends Component {
             </div>
           </Link>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/signin" component={SignInForm} />
-          <Route path="/signup" component={SignUpForm} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={Register} />
         </div>
       </Router>
     );

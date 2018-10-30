@@ -12,7 +12,8 @@
 }
 
 .landing-page,
-.sign-in-page {
+.sign-in-page,
+.register-page {
 	background-image: url('/cityscape.jpg');
 	background-size: cover;
 }
@@ -68,6 +69,27 @@
 }
 
 .sign-in-page .sign-in-paper .sign-in-submit-button {
+	margin-top: 15px;
+	width: 100%;
+}
+
+.register-page {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.register-page .register-paper {
+	width: 40%;
+	padding: 50px;
+}
+
+.register-page .register-paper h1 {
+	margin: 0;
+}
+
+.register-page .register-paper .register-submit-button {
 	margin-top: 15px;
 	width: 100%;
 }
