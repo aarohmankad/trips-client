@@ -11,6 +11,12 @@
 	animation-timing-function: ease-in;
 }
 
+.landing-page,
+.sign-in-page {
+	background-image: url('/cityscape.jpg');
+	background-size: cover;
+}
+
 .landing-page {
 	display: flex;
 	flex-direction: column;
@@ -18,8 +24,6 @@
 	align-items: center;
 	height: 100%;
 	width: 100%;
-	background-image: url('/cityscape.jpg');
-	background-size: cover;
 }
 
 .landing-page h1 {
@@ -63,8 +67,9 @@
 	margin: 0;
 }
 
-.sign-in-page .sign-in-paper .sign-in-formfield:nth-child(1) {
-	margin-right: 20px;
+.sign-in-page .sign-in-paper .sign-in-submit-button {
+	margin-top: 15px;
+	width: 100%;
 }
 
 .redError {

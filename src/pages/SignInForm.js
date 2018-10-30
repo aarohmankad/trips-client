@@ -17,8 +17,11 @@ class SignInForm extends Component {
 	}
 
 	handleChange(e) {
-		const { name, target } = e;
+		const { target } = e;
+		const { name } = target;
 		let value = target.type === 'checkbox' ? target.checked : target.value;
+
+		console.log(name, target);
 
 		this.setState({
 			[name]: value,
@@ -49,22 +52,31 @@ class SignInForm extends Component {
 							variant="outlined"
 							type="email"
 							name="email"
-							autocomplete="email"
+							autoComplete="email"
+							fullWidth
 						/>
 
 						<TextField
 							id="outlined-name"
 							className="sign-in-formfield"
 							label="Password"
+							name="password"
 							value={this.state.password}
 							onChange={this.handleChange}
 							margin="normal"
 							variant="outlined"
 							type="password"
+							fullWidth
 						/>
 					</form>
 
-					<Button variant="contained" color="#00E676" size="large">
+					<Button
+						variant="contained"
+						color="primary"
+						size="large"
+						onClick={this.handleSubmit}
+						className="sign-in-submit-button"
+					>
 						Sign In
 					</Button>
 				</Paper>
