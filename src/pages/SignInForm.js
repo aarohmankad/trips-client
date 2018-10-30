@@ -2,6 +2,7 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class SignInForm extends Component {
 	constructor() {
@@ -40,7 +41,6 @@ class SignInForm extends Component {
 			<div className="sign-in-page">
 				<Paper className="sign-in-paper">
 					<h1>Sign In</h1>
-
 					<form>
 						<TextField
 							id="outlined-name"
@@ -69,7 +69,6 @@ class SignInForm extends Component {
 							fullWidth
 						/>
 					</form>
-
 					<Button
 						variant="contained"
 						color="primary"
@@ -79,6 +78,10 @@ class SignInForm extends Component {
 					>
 						Sign In
 					</Button>
+
+					<p>
+						Don't have an account? <Link to="/signup">Register!</Link>
+					</p>
 				</Paper>
 			</div>
 		);

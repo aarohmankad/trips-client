@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+
 import LandingPage from './pages/LandingPage';
 import SignUpForm from './pages/SignUpForm';
 import SignInForm from './pages/SignInForm';
@@ -12,9 +13,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="Logo">
-            <img src={Logo} width="100" alt="" />
-          </div>
+          <Link to="/">
+            <div className="Logo">
+              <img src={Logo} width="100" alt="" />
+            </div>
+          </Link>
           <Route exact path="/" component={LandingPage} />
           <Route path="/signin" component={SignInForm} />
           <Route path="/signup" component={SignUpForm} />
