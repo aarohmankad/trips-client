@@ -2,7 +2,8 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import request from 'superagent';
 
 class SignUpForm extends Component {
   constructor() {
@@ -33,8 +34,17 @@ class SignUpForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    console.log('The form was submitted with the following data:');
-    console.log(this.state);
+    // FIXME: Strictly for demo purposes
+    request
+      .post('http://localhost:8000/api/users')
+      .send({
+        ...this.state,
+        name: `${this.state.firstname} ${this.state.lastname}`,
+      })
+      .then(response => {
+        localStorage.setItem('trips-user', JSON.stringify(response.body));
+        this.props.history.push('/search');
+      });
   }
 
   render() {
@@ -73,17 +83,6 @@ class SignUpForm extends Component {
               margin="normal"
               variant="outlined"
               name="username"
-              fullWidth
-            />
-
-            <TextField
-              className="register-formfield"
-              label="Last Name"
-              value={this.state.lastname}
-              onChange={this.handleChange}
-              margin="normal"
-              variant="outlined"
-              name="lastname"
               fullWidth
             />
 
@@ -144,4 +143,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm;
+export default withRouter(SignUpForm);
