@@ -4,6 +4,7 @@ import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import Register from './pages/Register';
 import SignIn from './pages/SignIn';
+import Search from './pages/Search';
 import Logo from './images/trips-icon.png';
 
 import './App.css';
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/" component={LandingPage} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={Register} />
+          <Route path="/search" component={Search} />
         </div>
       </Router>
     );
