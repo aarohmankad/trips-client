@@ -3,10 +3,10 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import request from 'superagent';
 
 class LandingPage extends Component {
@@ -71,6 +71,10 @@ class LandingPage extends Component {
           {this.state.candidates.map(candidate => (
             <Card className="search-page-candidate" key={candidate.id}>
               <CardActionArea>
+                <CardMedia
+                  image={candidate.populatedPhoto}
+                  title={candidate.name}
+                />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     {candidate.name}
@@ -86,6 +90,7 @@ class LandingPage extends Component {
                     candidate.place_id
                   }`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Button size="small" color="primary">
                     Check it out!
