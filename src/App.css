@@ -17,6 +17,9 @@
 .search-page {
 	background-image: url('/static/images/cityscape.jpg');
 	background-size: cover;
+	background-position-y: 50%;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
 	display: flex;
 	height: 100%;
 	justify-content: center;
