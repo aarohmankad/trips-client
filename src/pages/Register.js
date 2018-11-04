@@ -42,7 +42,7 @@ class SignUpForm extends Component {
         name: `${this.state.firstname} ${this.state.lastname}`,
       })
       .then(response => {
-        localStorage.setItem('trips-user', JSON.stringify(response.body));
+        localStorage.setItem('trips-user', JSON.stringify(response.body.token));
         this.props.history.push('/search');
       });
   }
