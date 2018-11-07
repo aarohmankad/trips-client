@@ -3,6 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import request from 'superagent';
 
 class SignInForm extends Component {
 	constructor() {
@@ -29,8 +30,14 @@ class SignInForm extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 
-		console.log('The form was submitted with the following data:');
-		console.log(this.state);
+		// FIXME: Strictly for demo purposes
+		request
+			.post('http://localhost:8000/api/login')
+			.send(this.state)
+			.then(response => {
+				localStorage.setItem('trips-user', JSON.stringify(response.body.token));
+				this.props.history.push('/search');
+			});
 	}
 
 	render() {

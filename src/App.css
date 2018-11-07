@@ -4,11 +4,20 @@
 }
 
 .Logo {
-	position: absolute;
-	margin-left: 0.5%;
-	margin-top: 0.5%;
 	animation: slidein 0.5s;
 	animation-timing-function: ease-in;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+.navbar .button {
+	font-size: 22px;
+	/*margin-right: 20px;*/
 }
 
 .landing-page,
