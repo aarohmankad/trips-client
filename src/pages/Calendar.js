@@ -1,15 +1,26 @@
+import dateFns from 'date-fns';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import dateFns from "date-fns";
+import request from 'superagent';
 
 class Calendar extends React.Component {
-  state = {
-    currentMonth: new Date(),
-    selectedDate: new Date()
-  };
+  constructor() {
+    super();
+
+    this.state = {
+      currentMonth: new Date(),
+      selectedDate: new Date(),
+      agenda: [
+        { title: 'THING TO DO TODAY' },
+        { title: 'THING TO DO TODAY' },
+        { title: 'THING TO DO TODAY' },
+        { title: 'THING TO DO TODAY' },
+      ],
+    };
+  }
 
   renderHeader() {
-    const dateFormat = "MMMM YYYY";
+    const dateFormat = 'MMMM YYYY';
 
     return (
       <div className="header row flex-middle">
@@ -29,7 +40,7 @@ class Calendar extends React.Component {
   }
 
   renderDays() {
-    const dateFormat = "dddd";
+    const dateFormat = 'dddd';
     const days = [];
 
     let startDate = dateFns.startOfWeek(this.state.currentMonth);
@@ -52,12 +63,12 @@ class Calendar extends React.Component {
     const startDate = dateFns.startOfWeek(monthStart);
     const endDate = dateFns.endOfWeek(monthEnd);
 
-    const dateFormat = "D";
+    const dateFormat = 'D';
     const rows = [];
 
     let days = [];
     let day = startDate;
-    let formattedDate = "";
+    let formattedDate = '';
 
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
@@ -67,8 +78,10 @@ class Calendar extends React.Component {
           <div
             className={`col cell ${
               !dateFns.isSameMonth(day, monthStart)
-                ? "disabled"
-                : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
+                ? 'disabled'
+                : dateFns.isSameDay(day, selectedDate)
+                  ? 'selected'
+                  : ''
             }`}
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
@@ -89,21 +102,39 @@ class Calendar extends React.Component {
     return <div className="body">{rows}</div>;
   }
 
+  renderAgenda() {
+    const agenda = this.state.agenda;
+    return (
+      <div>
+        {agenda.map(event => (
+          <div>{event.title}</div>
+        ))}
+      </div>
+    );
+  }
+
   onDateClick = day => {
     this.setState({
-      selectedDate: day
+      selectedDate: day,
     });
+
+    request
+      .get('localhost:8000/api/agenda')
+      .query({
+        date: day,
+      })
+      .then(agenda => this.setState({ agenda }));
   };
 
   nextMonth = () => {
     this.setState({
-      currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
+      currentMonth: dateFns.addMonths(this.state.currentMonth, 1),
     });
   };
 
   prevMonth = () => {
     this.setState({
-      currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
+      currentMonth: dateFns.subMonths(this.state.currentMonth, 1),
     });
   };
 
@@ -113,12 +144,10 @@ class Calendar extends React.Component {
         {this.renderHeader()}
         {this.renderDays()}
         {this.renderCells()}
+        {this.renderAgenda()}
       </div>
     );
   }
 }
 
 export default Calendar;
-
-
-
