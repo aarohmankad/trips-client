@@ -40,6 +40,7 @@ class App extends Component {
               </div>
             )}
           </div>
+
           <Route exact path="/" component={LandingPage} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={Register} />

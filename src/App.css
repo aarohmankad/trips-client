@@ -4,6 +4,9 @@
 }
 
 .Logo {
+	position: absolute;
+	margin-left: 0.5%;
+	margin-top: 0.5%;
 	animation: slidein 0.5s;
 	animation-timing-function: ease-in;
 }
@@ -43,7 +46,11 @@
 	font-size: 4rem;
 }
 
-.landing-page .blueText {
+.landing-page h1 {
+	font-size: 4rem;
+}
+
+.blueText {
 	color: #4885ed;
 }
 
