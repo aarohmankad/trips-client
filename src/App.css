@@ -1,56 +1,40 @@
-body {
-	background-image: url("./images/new-york.jpg");
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-}
-
 .App {
 	height: 100vh;
-	display: flex;
-	color: white;
-	overflow: auto;
-}
-
-.App_Form {
-	margin-top: 4%;
-	margin-left: 25%;
-	margin-bottom: 4%;
-	width: 50%;
-	background-color: #2E4158;
-	padding: 25px 40px;
-	border-radius: 25px;
-	overflow: hidden;
-	animation: fadein 0.5s;
+	width: 100vw;
 }
 
 .Logo {
 	position: absolute;
 	margin-left: 0.5%;
 	margin-top: 0.5%;
-	animation: slidein 1s;
+	animation: slidein 0.5s;
 	animation-timing-function: ease-in;
 }
 
-.LandingPage {
-	position: relative;
-	width: 100%;
-	text-align: center;
-	font-size: 200%;
-	overflow: hidden;
+.landing-page,
+.sign-in-page,
+.register-page,
+.search-page {
+	background-image: url('/static/images/cityscape.jpg');
+	background-size: cover;
+	background-position-y: 50%;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
-.LandingPage_Center {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-	height: 740px;
-	width: 20%;
+.landing-page {
+	flex-direction: column;
 }
 
-.LandingPage_Slide { 
-	animation: slidein-delay 2s;
+.landing-page h1 {
+	font-size: 4rem;
 }
 
+<<<<<<< .merge_file_eXgUGm
 .HomePage {
 	position: relative;
 	width: 100%;
@@ -69,23 +53,88 @@ body {
 }
 
 .blueText {
+=======
+.landing-page .blueText {
+>>>>>>> .merge_file_fDpgGl
 	color: #4885ed;
 }
 
-.redText {
+.landing-page .redText {
 	color: #db3236;
+}
+
+.landing-page .greenText {
+	color: #3cba54;
+}
+
+.landing-page .yellowText {
+	color: #f4c20d;
+}
+
+.landing-page-slide {
+	animation: slidein 0.5s;
+	animation-timing-function: ease-in;
+}
+
+.sign-in-page .sign-in-paper {
+	width: 40%;
+	padding: 50px;
+}
+
+.sign-in-page .sign-in-paper h1 {
+	margin: 0;
+}
+
+.sign-in-page .sign-in-paper .sign-in-submit-button {
+	margin-top: 15px;
+	width: 100%;
+}
+
+.register-page .register-paper {
+	width: 40%;
+	padding: 50px;
+}
+
+.register-page .register-paper h1 {
+	margin: 0;
+}
+
+.register-page .register-paper .register-submit-button {
+	margin-top: 15px;
+	width: 100%;
+}
+
+.search-page {
+	height: 100%;
+	flex-direction: column;
+}
+
+.search-page .search-page-input {
+	width: 40%;
+	color: white;
+}
+
+.search-page .search-page-candidates {
+	width: 40%;
+}
+
+<<<<<<< .merge_file_eXgUGm
+.FormField_40 {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.FormField_Label {
+=======
+.search-page .search-page-candidate {
+>>>>>>> .merge_file_fDpgGl
+	display: block;
+	margin: 30px auto;
+	width: 75%;
 }
 
 .redError {
 	color: red;
-}
-
-.greenText {
-	color: #3cba54;
-}
-
-.yellowText {
-	color: #f4c20d;
 }
 
 .GetStarted_Link {
@@ -93,7 +142,7 @@ body {
 	color: white;
 	padding: 10px 20px;
 	cursor: pointer;
-	font-size: .9em;
+	font-size: 0.9em;
 	border: none;
 	outline: none;
 	display: inline;
@@ -102,51 +151,18 @@ body {
 	animation: fadein-delay 3.5s;
 }
 
-.PageSwitcher {
-	display: flex;
-	justify-content: flex-end;
-	margin-bottom: 5%;
-}
-
-.PageSwitcher_Item {
-	background-color: #4C5D72;
-	color: #9DA6B1;
-	padding: 10px 20px;
-	cursor: pointer;
-	font-size: .9em;
-	border: none;
-	outline: none;
-	display: inline-block;
-	text-decoration: none;
-}
-
-.PageSwitcher_Item-Active {
-	background-color: #4285f4;
-	color: white;
-}
-
-.PageSwitcher_Item:first-child {
-	border-top-left-radius: 25px;
-	border-bottom-left-radius: 25px;
-}
-
-.PageSwitcher_Item:last-child {
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
-}
-
 .FormCenter {
 	margin-bottom: 100px;
 }
 
 .FormTitle {
-	color: #707C8B;
+	color: #707c8b;
 	font-weight: 300;
 	margin-bottom: 40px;
 }
 
 .FormTitle_Link {
-	color: #707C8B;
+	color: #707c8b;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 1.7em;
@@ -163,140 +179,49 @@ body {
 	border-bottom: 1px solid #2258b5;
 }
 
-#wrap {
-	width: 100%;
-}
-
-.FormField {
-	margin-bottom: 40px;
-}
-
-.FormField_40 {
-	width: 50%;
-	margin-left: 25%;
-}
-
-.FormField_Label {
-	display: block;
-	text-transform: uppercase;
-	font-size: .9em;
-	color: white;
-}
-
-.FormField_LeftLabel {
-	width: 40%;
-	text-transform: uppercase;
-	font-size: .9em;
-	color: white;
-	float: left;
-}
-
-.FormField_RightLabel {
-	width: 47.3%;
-	float: right;
-	text-transform: uppercase;
-	font-size: .9em;
-	color: white;
-}
-
-.FormField_Input {
-	width: 47.5%;
-	background-color: transparent;
-	border: none;
-	color: white;
-	outline: none;
-	border-bottom: 1px solid #445366;
-	font-size: 1em;
-	font-weight: 300;
-	padding-bottom: 10px;
-	margin-top: 10px;
-	position: relative;
-}
-
-.FormField_RightInput {
-	left: 5%;
-}
-
-.FormField_SignIn {
-	width: 100%;
-}
-
-.FormField_Input::placeholder {
-	color: #616E7F;
-}
-
-.FormField_Button {
-	background-color: #4285f4;
-	color: white;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	border-radius: 25px;
-	padding: 15px 70px;
-	font-size: .8em;
-	font-weight: 500;
-}
-
-.FormField_Link {
-	color: #66707D;
-	text-decoration: none;
-	display: inline-block;
-	border-bottom: 1.5px solid #2258b5;
-	padding-bottom: 5px;
-}
-
-.FormField_CheckboxLabel {
-	color: #646F7D;
-	font-size: .9em;
-}
-
-.FormField_Checkbox {
-	position: relative;
-	top: 1.5px;
-}
-
-.FormField_TermsLink {
-	color: white;
-	border-bottom: 1px solid #2258b5;
-	text-decoration: none;
-	display: inline-block;
-	padding-bottom: 2px;
-	margin-left: 5px;
-}
-
 @keyframes fadein {
-	from { opacity: 0; }
-	to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 @keyframes fadein-delay {
-	0% { opacity: 0; }
-	50% { opacity: 0; }
-	100% { opacity: 100; }
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100;
+	}
 }
 
 @keyframes slidein {
 	from {
 		opacity: 0;
-	  transform: translateY(-200px);
+		transform: translateY(-100px);
 	}
 	to {
 		opacity: 1;
-	  transform: translateY(0px);
+		transform: translateY(0px);
 	}
 }
 
 @keyframes slidein-delay {
 	0% {
 		opacity: 0;
-	  transform: translateY(-200px);
+		transform: translateY(-100px);
 	}
 	50% {
 		opacity: 0;
-	  transform: translateY(-200px);
+		transform: translateY(-100px);
 	}
 	100% {
 		opacity: 1;
-	  transform: translateY(0px);
+		transform: translateY(0px);
 	}
 }
