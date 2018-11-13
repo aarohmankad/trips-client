@@ -21,6 +21,7 @@ class LandingPage extends Component {
               Sign In
             </Button>
           </Link>
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <Link to="/signup">
             <Button variant="contained" color="primary" size="large">
               Sign Up
