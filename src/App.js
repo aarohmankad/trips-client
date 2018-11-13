@@ -1,3 +1,4 @@
+import Button from '@material-ui/core/Button';
 import React, { Component } from 'react';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -14,11 +15,31 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Link to="/">
-            <div className="Logo">
-              <img src={Logo} width="100" alt="" />
-            </div>
-          </Link>
+          <div className="navbar">
+            <Link to="/">
+              <div className="Logo">
+                <img src={Logo} width="64" alt="" />
+              </div>
+            </Link>
+
+            {localStorage.getItem('trips-user') ? (
+              <Button
+                className="button"
+                onClick={() => localStorage.removeItem('trips-user')}
+              >
+                Sign Out
+              </Button>
+            ) : (
+              <div>
+                <Link to="/signin">
+                  <Button className="button">Sign In </Button>
+                </Link>
+                <Link to="/signup">
+                  <Button className="button">Register</Button>
+                </Link>
+              </div>
+            )}
+          </div>
           <Route exact path="/" component={LandingPage} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={Register} />

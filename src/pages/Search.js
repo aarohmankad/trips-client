@@ -46,7 +46,7 @@ class LandingPage extends Component {
       .then(candidates => {
         console.log(candidates.body);
         this.setState({
-          candidates: this.state.candidates.concat(candidates.body),
+          candidates: candidates.body,
         });
       });
   }
@@ -74,6 +74,9 @@ class LandingPage extends Component {
                 <CardMedia
                   image={candidate.populatedPhoto}
                   title={candidate.name}
+                  style={{
+                    height: 400,
+                  }}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
