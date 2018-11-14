@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage';
 import Register from './pages/Register';
 import SignIn from './pages/SignIn';
 import Search from './pages/Search';
+import Trips from './pages/Trips';
 import Logo from './images/trips-icon.png';
 
 import './App.css';
@@ -23,14 +24,22 @@ class App extends Component {
             </Link>
 
             {localStorage.getItem('trips-user') ? (
-              <Button
-                className="button"
-                onClick={() => localStorage.removeItem('trips-user')}
-              >
-                Sign Out
-              </Button>
+              <div>
+                <Link to="/trips">
+                  <Button className="button">Create Trip </Button>
+                </Link>
+                <Button
+                  className="button"
+                  onClick={() => localStorage.removeItem('trips-user')}
+                >
+                  Sign Out
+                </Button>
+              </div>
             ) : (
               <div>
+                <Link to="/trips">
+                  <Button className="button">Create Trip </Button>
+                </Link>
                 <Link to="/signin">
                   <Button className="button">Sign In </Button>
                 </Link>
@@ -45,6 +54,7 @@ class App extends Component {
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={Register} />
           <Route path="/search" component={Search} />
+          <Route path="/trips" component={Trips} />
         </div>
       </Router>
     );
