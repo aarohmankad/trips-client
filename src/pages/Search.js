@@ -83,7 +83,9 @@ class LandingPage extends Component {
                     {candidate.name}
                   </Typography>
                   <Typography component="p">
-                    Rating: {candidate.rating}
+                    <p> Address: {candidate.formatted_address} </p>
+                    <p> Rating: {candidate.rating} </p>
+                    <p> Price Level: {candidate.price_level} </p>
                   </Typography>
                 </CardContent>
               </CardActionArea>
