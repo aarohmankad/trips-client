@@ -15,18 +15,19 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px;
+	/* padding: 20px; */
 }
 
 .navbar .button {
-	font-size: 22px;
-	/*margin-right: 20px;*/
+	font-size: 20px;
+	margin-right: 20px;
 }
 
 .landing-page,
 .sign-in-page,
 .register-page,
-.search-page {
+.search-page,
+.trips-page {
 	background-image: url('/static/images/cityscape.jpg');
 	background-size: cover;
 	background-position-y: 50%;
@@ -117,6 +118,24 @@
 	display: block;
 	margin: 30px auto;
 	width: 75%;
+}
+
+.trips-page .trips-paper {
+	width: 40%;
+	padding: 50px;
+}
+
+.trips-page .trips-paper h1 {
+	margin: 0;
+}
+
+.trips-page .trips-paper .trips-submit-button {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.trips-page .trips-paper .trips-datetime {
+	margin-top: 5px;
 }
 
 .redError {
