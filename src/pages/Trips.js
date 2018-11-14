@@ -1,8 +1,11 @@
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import jwt from 'jsonwebtoken';
 import React, { Component } from 'react';
 import request from 'superagent';
+
+import JSONWEBTOKEN from '../config/JSONWEBTOKEN';
 
 class TripsUserInterface extends Component {
 	constructor() {
@@ -30,12 +33,20 @@ class TripsUserInterface extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 
+		const user = jwt.decode(
+			localStorage.getItem('trips-user'),
+			JSONWEBTOKEN.secret
+		);
+		const payload = {
+			...this.state,
+			createdBy: user.user._id,
+		};
+
 		// FIXME: Strictly for demo purposes
 		request
 			.post('http://localhost:8000/api/trips')
-			.send(this.state)
+			.send(payload)
 			.then(response => {
-				localStorage.setItem('trips-user', JSON.stringify(response.body.token));
 				this.props.history.push('/search');
 			});
 	}
@@ -61,7 +72,6 @@ class TripsUserInterface extends Component {
 							label="Start Date"
 							onChange={this.handleChange}
 							type="date"
-							defaultValue={Date.now}
 							InputLabelProps={{ shrink: true }}
 						/>
 						<TextField
@@ -69,7 +79,6 @@ class TripsUserInterface extends Component {
 							label="End Date"
 							onChange={this.handleChange}
 							type="date"
-							defaultValue="2018-11-01-24T08:00"
 							InputLabelProps={{ shrink: true }}
 						/>
 					</form>
