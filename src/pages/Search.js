@@ -46,11 +46,7 @@ class LandingPage extends Component {
       .then(candidates => {
         console.log(candidates.body);
         this.setState({
-<<<<<<< HEAD
           candidates: candidates.body,
-=======
-          candidates: this.state.candidates.concat(candidates.body),
->>>>>>> Updated with master
         });
       });
   }
@@ -78,25 +74,18 @@ class LandingPage extends Component {
                 <CardMedia
                   image={candidate.populatedPhoto}
                   title={candidate.name}
-<<<<<<< HEAD
                   style={{
                     height: 400,
                   }}
-=======
->>>>>>> Updated with master
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     {candidate.name}
                   </Typography>
                   <Typography component="p">
-<<<<<<< HEAD
                     <p> Address: {candidate.formatted_address} </p>
                     <p> Rating: {candidate.rating} </p>
                     <p> Price Level: {candidate.price_level} </p>
-=======
-                    Rating: {candidate.rating}
->>>>>>> Updated with master
                   </Typography>
                 </CardContent>
               </CardActionArea>
