@@ -1,4 +1,4 @@
-import TextField from '@material-ui/core/TextField'
+import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import React, { Component } from 'react';
@@ -11,7 +11,7 @@ class TripsUserInterface extends Component {
 		this.state = {
 			location: '',
 			StartDate: '',
-			EndDate: ''
+			EndDate: '',
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -40,40 +40,37 @@ class TripsUserInterface extends Component {
 			});
 	}
 
-	render(){
-		return(
+	render() {
+		return (
 			<div className="trips-page">
 				<Paper className="trips-paper">
 					<h1>Create a Trip</h1>
-					<form  className = "trips-form" noValidate>
+					<form className="trips-form" noValidate>
 						<TextField
-              className="trips-formfield"
-              label="Location"
-              value={this.state.location}
-              onChange={this.handleChange}
-              margin="normal"
-              variant="outlined"
-              name="location"
-              fullWidth
-            />
+							className="trips-formfield"
+							label="Location"
+							value={this.state.location}
+							onChange={this.handleChange}
+							margin="normal"
+							variant="outlined"
+							name="location"
+							fullWidth
+						/>
 						<TextField
-							className='trips-datetime'
-							id="datetime-local"
+							className="trips-datetime"
 							label="Start Date"
 							onChange={this.handleChange}
-							type="datetime-local"
-							defaultValue="2018-11-01-24T08:00"
-							InputLabelProps={{ shrink: true}}
+							type="date"
+							defaultValue={Date.now}
+							InputLabelProps={{ shrink: true }}
 						/>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<TextField
-							className='trips-datetime'
-							id="datetime-local"
+							className="trips-datetime"
 							label="End Date"
 							onChange={this.handleChange}
-							type="datetime-local"
+							type="date"
 							defaultValue="2018-11-01-24T08:00"
-							InputLabelProps={{ shrink: true}}
+							InputLabelProps={{ shrink: true }}
 						/>
 					</form>
 					<Button
@@ -86,9 +83,9 @@ class TripsUserInterface extends Component {
 						Create Trip
 					</Button>
 				</Paper>
-			 </div>
-		) 
+			</div>
+		);
 	}
 }
 
-export default TripsUserInterface
+export default TripsUserInterface;
