@@ -27,6 +27,12 @@ class LandingPage extends Component {
               Sign Up
             </Button>
           </Link>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <Link to ="/tripsui">
+          <Button variant ="contained" color="primary" size="large">
+              Create Trip
+          </Button>
+          </Link>
         </div>
       </div>
     );
