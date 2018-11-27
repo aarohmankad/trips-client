@@ -4,9 +4,7 @@
 }
 
 .Logo {
-	position: absolute;
-	margin-left: 0.5%;
-	margin-top: 0.5%;
+	padding: 10px;
 	animation: slidein 0.5s;
 	animation-timing-function: ease-in;
 }
