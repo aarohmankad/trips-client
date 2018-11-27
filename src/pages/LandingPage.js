@@ -1,6 +1,6 @@
-import Button from '@material-ui/core/Button';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+
+import TripsList from '../components/TripsList';
 
 class LandingPage extends Component {
   render() {
@@ -15,19 +15,8 @@ class LandingPage extends Component {
           <span className="redText">e</span>
           &nbsp;Trips
         </h1>
-        <div>
-          <Link to="/signin">
-            <Button variant="contained" color="primary" size="large">
-              Sign In
-            </Button>
-          </Link>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <Link to="/signup">
-            <Button variant="contained" color="primary" size="large">
-              Sign Up
-            </Button>
-          </Link>
-        </div>
+
+        {localStorage.getItem('trips-user') && <TripsList />}
       </div>
     );
   }

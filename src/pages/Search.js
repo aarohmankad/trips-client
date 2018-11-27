@@ -44,7 +44,6 @@ class LandingPage extends Component {
       .get('http://localhost:8000/api/search')
       .query({ input })
       .then(candidates => {
-        console.log(candidates.body);
         this.setState({
           candidates: candidates.body,
         });
