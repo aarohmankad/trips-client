@@ -28,6 +28,9 @@ class App extends Component {
                 <Link to="/trips">
                   <Button className="button">Create Trip </Button>
                 </Link>
+                <Link to="/search">
+                  <Button className="button">Search </Button>
+                </Link>
                 <Button
                   className="button"
                   onClick={() => localStorage.removeItem('trips-user')}

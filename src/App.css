@@ -5,6 +5,7 @@
 
 .Logo {
 	padding: 10px;
+	padding-left: 20px;
 	animation: slidein 0.5s;
 	animation-timing-function: ease-in;
 }
@@ -134,6 +135,18 @@
 
 .trips-page .trips-paper .trips-datetime {
 	margin-top: 5px;
+}
+
+.trips-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 50%;
+	justify-content: center;
+}
+
+.trips-list .trips-list-trip {
+	margin: 20px;
 }
 
 .redError {
