@@ -68,6 +68,7 @@ class Trips extends Component {
 							name="startDate"
 							InputLabelProps={{ shrink: true }}
 						/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<TextField
 							className="trips-datetime"
 							label="End Date"
