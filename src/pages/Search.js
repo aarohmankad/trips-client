@@ -143,7 +143,7 @@ class LandingPage extends Component {
                 <TextField
                   select
                   label="Trip"
-                  value={this.state.trips[0].location}
+                  value={this.state.trips[0] == null ? this.state.trips.location : this.state.trips[0].location}
                   onChange={event =>
                     this.addToTrip(candidate, event.target.value)
                   }
