@@ -4,6 +4,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import React, { Component } from 'react';
@@ -16,10 +17,21 @@ class LandingPage extends Component {
     this.state = {
       input: '',
       candidates: [],
+      trips: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    request
+      .get('http://localhost:8000/api/trips')
+      .set('Authorization', `Bearer ${localStorage.getItem('trips-user')}`)
+      .then(trips => {
+        this.setState({ trips: trips.body });
+      })
+      .catch(error => console.error(error));
   }
 
   handleChange(e) {
@@ -47,6 +59,25 @@ class LandingPage extends Component {
         this.setState({
           candidates: candidates.body,
         });
+      });
+  }
+
+  addToTrip(candidate, tripId) {
+    console.log({ candidate, tripId });
+    request
+      .post('http://localhost:8000/api/attractions')
+      .send({
+        image: candidate.populatedPhoto,
+        link: `https://www.google.com/maps/place/?q=place_id:${
+          candidate.place_id
+        }`,
+        title: candidate.name,
+      })
+      .then(attraction => {
+        return request
+          .put(`http://localhost:8000/api/trips/${tripId}`)
+          .query({ attraction: attraction.body._id })
+          .then(success => console.log({ success }));
       });
   }
 
@@ -81,14 +112,22 @@ class LandingPage extends Component {
                   <Typography gutterBottom variant="h5" component="h2">
                     {candidate.name}
                   </Typography>
-                  <Typography component="p">
-                    <p> Address: {candidate.formatted_address} </p>
-                    <p> Rating: {candidate.rating} </p>
-                    <p> Price Level: {candidate.price_level} </p>
+                  <Typography component="div">
+                    {candidate.formatted_address && (
+                      <p> Address: {candidate.formatted_address} </p>
+                    )}
+                    {candidate.rating && <p> Rating: {candidate.rating} </p>}
+                    {candidate.price_level && (
+                      <p> Price Level: {candidate.price_level} </p>
+                    )}
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
+              <CardActions
+                style={{
+                  justifyContent: 'space-between',
+                }}
+              >
                 <a
                   href={`https://www.google.com/maps/place/?q=place_id:${
                     candidate.place_id
@@ -100,6 +139,22 @@ class LandingPage extends Component {
                     Check it out!
                   </Button>
                 </a>
+
+                <TextField
+                  select
+                  label="Trip"
+                  value={this.state.trips[0].location}
+                  onChange={event =>
+                    this.addToTrip(candidate, event.target.value)
+                  }
+                  margin="normal"
+                >
+                  {this.state.trips.map(trip => (
+                    <MenuItem key={trip._id} value={trip._id}>
+                      {trip.location}
+                    </MenuItem>
+                  ))}
+                </TextField>
               </CardActions>
             </Card>
           ))}
